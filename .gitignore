@@ -39,3 +39,7 @@ pnpm-debug.log*
 desktop.ini
 Thumbs.db
 .DS_Store
+
+# Firebase cache
+.firebase/
+

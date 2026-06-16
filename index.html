@@ -4,16 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script>
-        (function () {
-            const mobileBreakpoint = 768;
-            const oldWebsitePath = './OLD%20WEBSITE/public_html/index.html';
 
-            if (window.innerWidth <= mobileBreakpoint) {
-                window.location.replace(oldWebsitePath);
-            }
-        })();
-    </script>
     <title>Pain & Company - We Hate Traditional Consulting</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -2573,19 +2564,15 @@
                 gap: 20px;
             }
 
-            .conveyor-belt,
-            .conveyor-item,
-            .station-wrapper {
-                display: none !important;
-            }
+
 
             .comparison {
-                width: calc(100% - 40px) !important;
+                width: 100% !important;
                 max-width: 100% !important;
-                margin: 40px 20px !important;
-                padding: 0 0 60px !important;
+                margin: 40px 0 !important;
+                padding: 0 56px 60px 20px !important;
                 display: block !important;
-                /* Ensure it is visible */
+                /* Ensure it is visible and padded away from the rightmost belt */
             }
 
             .section-title {
@@ -2615,53 +2602,106 @@
 
             .team-mobile-gallery {
                 display: grid !important;
-                grid-template-columns: repeat(3, 1fr);
-                gap: 10px;
-                margin-top: 30px;
+                grid-template-columns: repeat(2, 1fr);
+                gap: 16px;
+                margin-top: 24px;
             }
 
             .team-member-card {
-                background: rgba(13, 13, 13, 0.03);
+                background: var(--white);
                 border: 1px solid rgba(13, 13, 13, 0.08);
-                border-radius: 15px;
-                padding: 10px 5px;
+                border-radius: 16px;
+                padding: 20px 12px;
                 text-align: center;
                 transition: transform 0.3s;
+                box-shadow: 0 4px 20px rgba(0, 0, 0, 0.01);
             }
 
             .team-member-card img {
-                width: 90%;
-                aspect-ratio: 1;
+                width: 72px;
+                height: 72px;
                 object-fit: cover;
                 border-radius: 50%;
-                margin-bottom: 8px;
-                border: 1.5px solid var(--primary);
+                margin-bottom: 12px;
+                border: 2px solid var(--primary);
+                display: inline-block;
             }
 
             .member-name {
                 font-family: 'Plus Jakarta Sans', sans-serif;
-                font-size: 36px;
+                font-size: 14px;
                 font-weight: 700;
                 letter-spacing: -0.01em;
                 text-transform: none;
                 color: var(--dark);
-                line-height: 1.2;
+                line-height: 1.3;
+                text-decoration: none;
+                display: block;
+                transition: color 0.2s;
             }
 
-            /* Center the last member if they are alone in the 3-column grid */
-            .team-mobile-gallery .team-member-card:last-child:nth-child(3n+1) {
-                grid-column: 2;
+            .member-name:hover {
+                color: var(--primary);
+            }
+
+            .conveyor-container {
+                min-height: 100vh;
+                padding: 120px 0;
+                overflow: hidden;
+                position: relative;
+                background: var(--white);
             }
 
             .conveyor-belt {
-                width: 40px;
-                right: 4%;
+                width: 24px;
+                right: 16px;
+                left: auto;
+                transform: none;
             }
 
             .conveyor-item {
-                right: calc(4% + 10px);
-                width: 30px;
-                height: 40px;
+                right: 20px;
+                left: auto;
+                transform: none;
+                width: 16px;
+                height: 22px;
+            }
+
+            .station-wrapper {
+                right: 16px;
+                left: auto;
+                transform: none;
+                width: 24px;
+                z-index: 5;
+            }
+
+            .station-scanner {
+                right: -12px;
+                left: auto;
+                transform: none;
+                width: 48px;
+                height: 36px;
+                padding: 2px;
+            }
+
+            .station-scanner::before {
+                top: 6px;
+                left: 6px;
+                width: 10px;
+                height: 24px;
+            }
+
+            .station-scanner::after {
+                top: 10px;
+                left: 8px;
+                width: 6px;
+                height: 16px;
+            }
+
+            .scanner-panel,
+            .scanner-lights,
+            .scanner-wires {
+                display: none !important;
             }
 
             .problem-section {
@@ -3433,28 +3473,20 @@
                     <a href="https://www.linkedin.com/in/shardul-singh-b06671312/" target="_blank" class="member-name">Shardul Singh</a>
                 </div>
                 <div class="team-member-card">
-                    <img src="zaara.jpeg" alt="Zaara Zaidi">
-                    <a href="https://www.linkedin.com/in/zaarazaidi/" target="_blank" class="member-name">Zaara Zaidi</a>
+                    <img src="daksh.jpeg" alt="Daksh Rampuria">
+                    <a href="#" target="_blank" class="member-name">Daksh Rampuria</a>
                 </div>
                 <div class="team-member-card">
-                    <img src="gaurav.jpeg" alt="Gaurav Kalal">
-                    <a href="https://www.linkedin.com/in/-gauravkalal-/" target="_blank" class="member-name">Gaurav Kalal</a>
+                    <img src="neel.jpeg" alt="Neel Rawat">
+                    <a href="#" target="_blank" class="member-name">Neel Rawat</a>
                 </div>
                 <div class="team-member-card">
-                    <img src="samar.jpeg" alt="Samar Nasir">
-                    <a href="https://www.linkedin.com/in/samar-nasir-/" target="_blank" class="member-name">Samar Nasir</a>
+                    <img src="samidha.jpeg" alt="Samidha">
+                    <a href="#" target="_blank" class="member-name">Samidha</a>
                 </div>
                 <div class="team-member-card">
-                    <img src="ojas.jpeg" alt="Ojas Srivastava">
-                    <a href="https://www.linkedin.com/in/ojasri/" target="_blank" class="member-name">Ojas Srivastava</a>
-                </div>
-                <div class="team-member-card">
-                    <img src="tirth.jpeg" alt="Tirth Virkar">
-                    <a href="https://www.linkedin.com/in/tirthvirkar/" target="_blank" class="member-name">Tirth Virkar</a>
-                </div>
-                <div class="team-member-card">
-                    <img src="ajeet.jpeg" alt="Ajeet Verma">
-                    <a href="https://www.linkedin.com/in/ajeet-vermai/" target="_blank" class="member-name">Ajeet Verma</a>
+                    <img src="manan.jpeg" alt="Manan Chaddha">
+                    <a href="#" target="_blank" class="member-name">Manan Chaddha</a>
                 </div>
             </div>
 
@@ -4370,41 +4402,39 @@
             statsObserver.observe(stat);
         });
 
-        // Conveyor Item Animation with Stage Transformation (Disable on Mobile)
-        if (!isMobile) {
-            const conveyorContainer = document.querySelector('.conveyor-container');
-            const conveyorItem = document.querySelector('.conveyor-item');
-            const stages = document.querySelectorAll('.conveyor-item .stage');
-            const thresholds = [0.14, 0.375, 0.605, 0.84];
-            let currentStage = 0;
+        // Conveyor Item Animation with Stage Transformation (Enabled Globally)
+        const conveyorContainer = document.querySelector('.conveyor-container');
+        const conveyorItem = document.querySelector('.conveyor-item');
+        const stages = document.querySelectorAll('.conveyor-item .stage');
+        const thresholds = [0.14, 0.375, 0.605, 0.84];
+        let currentStage = 0;
 
-            function setStage(index) {
-                if (index === currentStage) return;
-                stages[currentStage].classList.remove('active');
-                stages[index].classList.add('active');
-                currentStage = index;
-            }
-
-            gsap.to(conveyorItem, {
-                y: () => conveyorContainer.offsetHeight + 200,
-                ease: 'none',
-                scrollTrigger: {
-                    trigger: conveyorContainer,
-                    start: 'top+=420 top',
-                    end: 'bottom+=620 top',
-                    scrub: true,
-                    invalidateOnRefresh: true,
-                    onUpdate: (self) => {
-                        const p = self.progress;
-                        if (p >= thresholds[3]) setStage(4);
-                        else if (p >= thresholds[2]) setStage(3);
-                        else if (p >= thresholds[1]) setStage(2);
-                        else if (p >= thresholds[0]) setStage(1);
-                        else setStage(0);
-                    }
-                }
-            });
+        function setStage(index) {
+            if (index === currentStage) return;
+            stages[currentStage].classList.remove('active');
+            stages[index].classList.add('active');
+            currentStage = index;
         }
+
+        gsap.to(conveyorItem, {
+            y: () => conveyorContainer.offsetHeight + 200,
+            ease: 'none',
+            scrollTrigger: {
+                trigger: conveyorContainer,
+                start: 'top+=420 top',
+                end: 'bottom+=620 top',
+                scrub: true,
+                invalidateOnRefresh: true,
+                onUpdate: (self) => {
+                    const p = self.progress;
+                    if (p >= thresholds[3]) setStage(4);
+                    else if (p >= thresholds[2]) setStage(3);
+                    else if (p >= thresholds[1]) setStage(2);
+                    else if (p >= thresholds[0]) setStage(1);
+                    else setStage(0);
+                }
+            }
+        });
     </script>
     <style>
         .circular-gallery {
@@ -4761,13 +4791,11 @@
             }
             createMedias(items, bend = 1, textColor, borderRadius, font) {
                 const defaultItems = [
-                    { image: `https://i.ibb.co/TQ6v7kX/shardul.jpg`, text: 'Shardul Singh' },
-                    { image: `https://i.ibb.co/sdSbM852/zaara.jpg`, text: 'Zaara Zaidi' },
-                    { image: `https://i.ibb.co/Y4pct9nv/samar.jpg`, text: 'Samar Nasir' },
-                    { image: `https://i.ibb.co/DPS9mcQ0/ojas.jpg`, text: 'Ojas Srivastava' },
-                    { image: `https://i.ibb.co/TM6gwL5s/tirth.jpg`, text: 'Tirth Virkar' },
-                    { image: `https://i.ibb.co/BHSpSjhb/ajeet.jpg`, text: 'Ajeet Verma' },
-                    { image: `https://i.ibb.co/yFvmB972/gaurav.jpg`, text: 'Gaurav Kalal' },
+                    { image: `./shardul.jpeg`, text: 'Shardul Singh' },
+                    { image: `./daksh.jpeg`, text: 'Daksh Rampuria' },
+                    { image: `./neel.jpeg`, text: 'Neel Rawat' },
+                    { image: `./samidha.jpeg`, text: 'Samidha' },
+                    { image: `./manan.jpeg`, text: 'Manan Chaddha' },
                 ];
                 const galleryItems = items && items.length ? items : defaultItems;
                 this.mediasImages = galleryItems.concat(galleryItems);
@@ -4888,12 +4916,13 @@
         if (teamGalleryContainer) {
             const initGallery = () => {
                 const isMobile = window.innerWidth <= 768;
+                if (isMobile) return;
                 new App(teamGalleryContainer, {
-                    bend: isMobile ? 1.5 : 3,
+                    bend: 3,
                     textColor: '#ffffff',
                     borderRadius: 0.05,
-                    font: isMobile ? '700 80px "Plus Jakarta Sans"' : '700 100px "Plus Jakarta Sans"',
-                    scrollSpeed: isMobile ? 1.5 : 2,
+                    font: '700 100px "Plus Jakarta Sans"',
+                    scrollSpeed: 2,
                     scrollEase: 0.02
                 });
             };
